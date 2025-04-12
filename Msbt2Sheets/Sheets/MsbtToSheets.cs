@@ -286,14 +286,17 @@ public class MsbtToSheets
         else
         {
             answer = Console.ReadLine();
+            if (answer == "1")
+            {
+                options.FreezeColumnCount = 2; // Freeze labels and main language
+            }
             if (answer == "2")
             {
-                options.FreezeColumnCount = 0;
+                options.FreezeColumnCount = 1; // Freeze only labels
             }
-
             if (answer == "3")
             {
-                options.FreezeColumnCount = 0;
+                options.FreezeColumnCount = 0; // Don't freeze
             }
         }
         
@@ -474,7 +477,7 @@ public class MsbtToSheets
                         RowCount = 1 + msbt.Messages.Count,
                         ColumnCount = columnCount,
                         FrozenRowCount = 1,
-                        FrozenColumnCount = options.FreezeColumnCount != 1 + langs.Count ? options.FreezeColumnCount : 1
+                        FrozenColumnCount = options.FreezeColumnCount
                     },
                     SheetId = j + 1
                 },
