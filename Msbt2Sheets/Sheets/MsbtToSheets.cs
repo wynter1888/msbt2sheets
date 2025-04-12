@@ -476,7 +476,7 @@ public class MsbtToSheets
                     {
                         RowCount = 1 + msbt.Messages.Count,
                         ColumnCount = columnCount,
-                        FrozenRowCount = 1,
+                        FrozenRowCount = 0,
                         FrozenColumnCount = options.FreezeColumnCount
                     },
                     SheetId = j + 1
