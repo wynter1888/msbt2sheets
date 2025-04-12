@@ -288,7 +288,7 @@ public class MsbtToSheets
             answer = Console.ReadLine();
             if (answer == "2")
             {
-                options.FreezeColumnCount = 1;
+                options.FreezeColumnCount = 0;
             }
 
             if (answer == "3")
@@ -473,7 +473,7 @@ public class MsbtToSheets
                     {
                         RowCount = 1 + msbt.Messages.Count,
                         ColumnCount = columnCount,
-                        FrozenRowCount = 0,
+                        FrozenRowCount = 1,
                         FrozenColumnCount = options.FreezeColumnCount != 1 + langs.Count ? options.FreezeColumnCount : 1
                     },
                     SheetId = j + 1
@@ -1036,7 +1036,7 @@ public class MsbtToSheets
                 {
                     RowCount = 3 + spreadsheet.Sheets.Where(x => !x.Properties.Title.StartsWith('#')).ToList().Count,
                     ColumnCount = 3 + 2 * transLangNames.Count,
-                    FrozenRowCount = 3
+                    FrozenRowCount = 1
                 }
             },
             Data = new List<GridData>()
