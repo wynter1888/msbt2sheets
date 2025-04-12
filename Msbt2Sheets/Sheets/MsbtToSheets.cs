@@ -466,7 +466,7 @@ public class MsbtToSheets
             {
                 columnCount++;
             }
-            
+            Console.WriteLine($"Creating sheet for {msbt.FileName}. RowCount will be: {1 + msbt.Messages.Count}, ColumnCount will be: {columnCount}, FrozenRowCount will be: 0, FrozenColumnCount will be: {options.FreezeColumnCount}");
             Sheet sheet = new Sheet()
             {
                 Properties = new SheetProperties()
